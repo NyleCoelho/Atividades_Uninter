@@ -59,3 +59,4 @@ while True:
         break
 
 print(f"O valor total do seu pedido é: R$ {total_pedido:.2f}") # Exibe o valor total do pedido
+print("Obrigado por comprar na Loja de Marmitas da Barbara Bianca!") # Mensagem de agradecimento    
