@@ -1,3 +1,5 @@
+#Questão 1 - Barbara Bianca Campos Coelho - RU 4821162
+
 #Mensgaem de boas vindas apresentando nome completo
 print('Bem-vindo(a) a loja da Barbara Bianca!')
 

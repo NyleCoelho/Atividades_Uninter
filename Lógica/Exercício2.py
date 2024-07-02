@@ -1,3 +1,5 @@
+#Questão 2 - Barbara Bianca Campos Coelho - RU 4821162
+
 print("Bem-vindo a Loja de Marmitas da Barbara Bianca!")
 print("----------------MENU DE OPÇÕES-----------------")
 
