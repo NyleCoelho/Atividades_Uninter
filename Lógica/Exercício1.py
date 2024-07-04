@@ -1,13 +1,13 @@
 #Questão 1 - Barbara Bianca Campos Coelho - RU 4821162
 
-#Mensgaem de boas vindas apresentando nome completo
+#Mensagem de boas vindas
 print('Bem-vindo(a) a loja da Barbara Bianca!')
 
-#Coletando do usuário o valor do pedido e a quantidade de parcelas 
+#Coleta os dados do usuário
 valorDoPedido = float(input('Entre com o valor do pedido: '))
 quantidadeParcelas = int(input('Entre com a quantidade de parcelas: '))
 
-#Implementando a lógica da taxa de juros de acordo com os dados fornecidos
+#Implementa a taxa de juros de acordo com a quantidade de parcelas
 if quantidadeParcelas >= 4 and quantidadeParcelas < 6:
     juros = 0.04 #4%
 elif quantidadeParcelas >= 6 and quantidadeParcelas < 9:
@@ -19,12 +19,11 @@ elif quantidadeParcelas >= 13:
 else:
     juros = 0.0
 
-#Implementado o cálculo do valor das parcelas e o valor total parcelado 
+#Implementa o cálculo do valor das parcelas e o valor total parcelado 
 valorDaParcela = valorDoPedido * (1 + juros) / quantidadeParcelas
 valorTotalParcelado = valorDaParcela * quantidadeParcelas
 
-#Apresentando o valor das parcelas e o total parcelado de acordo com a taxa de juros
+#Apresenta o valor das parcelas e o total parcelado de acordo com a taxa de juros
 print(f'Valor dos juros aplicados é de: {juros * 100:.0f}%')
 print(f'O valor das parcelas é de R$ {valorDaParcela:.2f}')
 print(f'O valor total parcelado é de R$ {valorTotalParcelado:.2f}')
-print('Código por Barbara Bianca Campos Coelho')
