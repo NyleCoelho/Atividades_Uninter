@@ -1,6 +1,6 @@
 #Questão 3 - Barbara Bianca Campos Coelho - RU 4821162
 
-print('Bem-vindo(a) a fábrica de camisetas de Barbara Bianca!') #Mensagem de boas vindas com nome completo
+print('Bem-vindo(a) a fábrica de camisetas de Barbara Bianca!\n') #Mensagem de boas vindas com nome completo
 print('--------------PREÇOS DAS CAMISETAS--------------') 
 
 def precos_camisetas(): #dados das camisetas
@@ -20,7 +20,7 @@ precos_camisetas() # Chama a função para apresentar os valores das camisetas
 def escolha_modelo():
     while True:
         global modelo # Variável global para ser usada no codigo principal
-        modelo = input("Digite o modelo desejado: ").strip().upper()
+        modelo = input("\nDigite o modelo desejado: ").strip().upper()
         if modelo == "MCS":
             return 1.80
         elif modelo == "MLS":
@@ -51,7 +51,7 @@ def num_camisetas():
                 else:
                     return num * 0.88
         except ValueError: # Exceção para valor inválido
-            print("Entrada inválida! Digite um número inteiro.")
+            print("Entrada inválida! Digite um número inteiro.\n")
 
 def precos_fretes(): #dados dos modelos de frete
     tipos_frete = [
@@ -60,7 +60,7 @@ def precos_fretes(): #dados dos modelos de frete
         ("Retirar na Fábrica..................", 0.00)
     ]
 
-    print("-----------SERVIÇO ADICIONAL DE FRETE-----------")
+    print("\n-----------SERVIÇO ADICIONAL DE FRETE-----------")
 
     for descricao, valor in tipos_frete: # Apresenta os valores de cada opção de frete  
         print(f"{descricao} - R$ {valor:.2f}")
@@ -69,7 +69,7 @@ def precos_fretes(): #dados dos modelos de frete
 def frete():
     while True:
         precos_fretes() # Chama a função para apresentar os valores dos fretes
-        opcao_frete = input("Digite o serviço adicional de frete (1/2/3)): ").strip()
+        opcao_frete = input("\nDigite o serviço adicional de frete (1/2/3)): ").strip()
         if opcao_frete == "1":
             return 100
         elif opcao_frete == "2":
@@ -88,5 +88,5 @@ valor_frete = frete()
 # Cálculo do total a pagar
 total = (valor_modelo * numero_camisetas) + valor_frete  
 
-print(f"Você escolheu {numero_camisetas:.0f} camisetas do modelo {modelo}")
+print(f"\nVocê escolheu {numero_camisetas:.0f} camisetas do modelo {modelo} (R$ {valor_modelo:.2f}) com frete de R$ {valor_frete:.2f}")
 print(f"O valor total a pagar é: R$ {total:.2f}")  # Saída do resultado final
