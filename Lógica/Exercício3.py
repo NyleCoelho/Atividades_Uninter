@@ -19,6 +19,7 @@ precos_camisetas() # Chama a função para apresentar os valores das camisetas
 # Função para escolher o modelo de camiseta
 def escolha_modelo():
     while True:
+        global modelo # Variável global para ser usada no codigo principal
         modelo = input("Digite o modelo desejado: ").strip().upper()
         if modelo == "MCS":
             return 1.80
@@ -34,10 +35,10 @@ def escolha_modelo():
 # Função para escolher o número de camisetas
 def num_camisetas():
     while True:
-        try:
+        try: # Tratamento de exceção para entrada inválida
             num = int(input("Digite o número de camisetas desejado: "))
             if num <= 0:
-                print("Número de camisetas deve ser maior que zero. Tente novamente.")
+                print("Número de camisetas deve ser maior que zero! Tente novamente.")
             elif num > 20000:
                 print("Não aceitamos tantas camisetas de uma só vez. Tente novamente.")
             else:
@@ -49,13 +50,26 @@ def num_camisetas():
                     return num * 0.93
                 else:
                     return num * 0.88
-        except ValueError:
+        except ValueError: # Exceção para valor inválido
             print("Entrada inválida! Digite um número inteiro.")
+
+def precos_fretes(): #dados dos modelos de frete
+    tipos_frete = [
+        ("Transportadora......................", 100.00),
+        ("Sedex...............................", 200.00),
+        ("Retirar na Fábrica..................", 0.00)
+    ]
+
+    print("-----------SERVIÇO ADICIONAL DE FRETE-----------")
+
+    for descricao, valor in tipos_frete: # Apresenta os valores de cada opção de frete  
+        print(f"{descricao} - R$ {valor:.2f}")
 
 # Função para escolher o frete
 def frete():
     while True:
-        opcao_frete = input("Digite o serviço adicional de frete (1 para Transportadora, 2 para Sedex, 0 para Retirar na Fábrica): ").strip()
+        precos_fretes() # Chama a função para apresentar os valores dos fretes
+        opcao_frete = input("Digite o serviço adicional de frete (1/2/3)): ").strip()
         if opcao_frete == "1":
             return 100
         elif opcao_frete == "2":
@@ -74,4 +88,5 @@ valor_frete = frete()
 # Cálculo do total a pagar
 total = (valor_modelo * numero_camisetas) + valor_frete  
 
+print(f"Você escolheu {numero_camisetas:.0f} camisetas do modelo {modelo}")
 print(f"O valor total a pagar é: R$ {total:.2f}")  # Saída do resultado final
