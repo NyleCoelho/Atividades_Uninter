@@ -43,21 +43,25 @@ def consultar_funcionarios(): # Função para consultar os funcionários cadastr
         elif opcoes == 2: # Consulta por ID
             id = int(input("Digite o ID do funcionário: "))
             encontrado = False
+
             for funcionario in lista_funcionarios:
                 if id == funcionario["ID"]:
                     print(f"\nID: {funcionario['ID']} \n Nome: {funcionario['Nome']} \n Salário: R$ {funcionario['Salário']} \n Setor: {funcionario['Setor']}\n")
                     encontrado = True
                     break
             if not encontrado:
+
                 print("\nID não foi encontrado! Tente novamente.\n")
         
         elif opcoes == 3: # Consulta por setor
             setor = input("Digite o setor do funcionário: ").strip().title()
             encontrado = False
+
             for funcionario in lista_funcionarios:
                 if setor == funcionario["Setor"]:
                     print(f"\nID: {funcionario['ID']} \n Nome: {funcionario['Nome']} \n Salário: R$ {funcionario['Salário']} \n Setor: {funcionario['Setor']}\n")
                     encontrado = True
+
             if not encontrado:
                 print("\nSetor não foi encontrado! Tente novamente.\n")
 
@@ -70,12 +74,14 @@ def consultar_funcionarios(): # Função para consultar os funcionários cadastr
 def remover_funcionario(): # Função para remover funcionário
     id = int(input("Digite o ID do funcionário que deseja remover: "))
     encontrado = False
+
     for funcionario in lista_funcionarios:
         if id == funcionario["ID"]: # Remove o funcionário da lista
             lista_funcionarios.remove(funcionario)
             print("\nFuncionário removido com sucesso!\n")
             encontrado = True
             break
+
     if not encontrado: # Mensagem de erro caso o ID não seja encontrado
         print("\nID não foi encontrado! Tente novamente.\n")
 
