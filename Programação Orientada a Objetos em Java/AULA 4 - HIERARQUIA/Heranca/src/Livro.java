@@ -5,6 +5,14 @@ public class Livro {
     public String titulo;
     public int paginas;
 
+    public Livro() {
+
+    }
+
+    public Livro(String titulo, String autor) {
+        this.titulo="titulo";
+    }
+
     public float lucro() {
         return precoVenda - custoProducao;
     }
