@@ -1,4 +1,13 @@
-package PACKAGE_NAME;
+public class Gato implements Animal{
 
-public class Gato {
+    @Override
+    public void emitirSom() {
+
+    }
+
+    @Override
+    public void dormir() {
+
+    }
+
 }
